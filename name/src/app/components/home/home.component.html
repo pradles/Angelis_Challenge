@@ -1,0 +1,20 @@
+
+<div class="products-container">
+    <div class="product-card" *ngFor="let product of products" [routerLink]="['product-details', product.id]">
+      <mat-card>
+        <img mat-card-image [src]="product.primaryMediaUrl" alt="Product Image" />
+        <mat-card-header>
+          <mat-card-title>{{ product.cardTitle }}</mat-card-title>
+          <mat-card-subtitle>{{ product.cardDescription }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Price: {{ product.listOfPlans[0].price.amount }}{{ product.listOfPlans[0].price.currency }}</p>
+          <p>Quantity: {{ product.availableQuantity }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button [disabled]="product.addedToCart">Add to Cart</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
