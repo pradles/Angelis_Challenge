@@ -10,7 +10,15 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FilterComponent } from './filter/filter.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms'; 
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form-field';
+
+ 
 
 
 @NgModule({
@@ -18,6 +26,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AppComponent,
     HomeComponent,
     ProductDetailsComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     MatButtonModule,
     MatCardModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSliderModule,
+    MatInputModule,
+    FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,20 @@
-.products-container {
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px; /* Add padding to keep the cards within the screen */
+  }
+  
+  .filter-container {
+    flex: 1 0 20%; /* Initial width of 20%, but can shrink and grow */
+    min-width: 250px; /* Minimum width of the filter container */
+    max-width: 250px; /* Limit the maximum width of the filter container */
+    padding: 10px;
+    margin-right: 20px; /* Add margin between the filter and cards */
+  }
+  
+  .products-container {
+    flex: 1;
+    max-width: 76%; /* Limit the width of the products container to 76% of the available space */
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Add some spacing between the cards */
@@ -13,23 +29,85 @@
   }
   
   /* Media queries for smaller screens */
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1100px) {
+    .filter-container {
+      flex: 1 0 30%; /* On smaller screens, set the filter container width to 30% */
+      max-width: 30%; /* Limit the maximum width of the filter container */
+      min-width: 250px;
+    max-width: 250px;
+    }
+  
+    .products-container {
+      max-width: 70%; /* Limit the width of the products container to 70% of the available space */
+    }
+  
     .product-card {
       flex: 1 0 calc(50% - 20px); /* Show two cards per row on smaller screens */
       max-width: calc(50% - 20px);
     }
   }
+
+  @media screen and (max-width: 890px){
+    .filter-container {
+        flex: 1 0 30%; /* On even smaller screens, set the filter container width to 100% (full width) */
+        max-width: 30%; /* Limit the maximum width of the filter container */
+        min-width: 250px; 
+        max-width: 250px;
+      }
+    
+      .products-container {
+        max-width: 65%; /* Limit the width of the products container to 100% of the available space */
+      }
+    
+      .product-card {
+        flex: 0 1 65%; /* Show one card per row on even smaller screens */
+        max-width: 65%;
+      }
+  }
   
   @media screen and (max-width: 576px) {
+    .filter-container {
+      flex: 1 0 100%; /* On even smaller screens, set the filter container width to 100% (full width) */
+      max-width: 60%; /* Limit the maximum width of the filter container */
+      min-width: 250px; /* Minimum width of the filter container */
+      max-width: 250px;
+    }
+  
+    .products-container {
+      max-width: 100%; /* Limit the width of the products container to 100% of the available space */
+    }
+  
     .product-card {
       flex: 1 0 100%; /* Show one card per row on even smaller screens */
       max-width: 100%;
     }
   }
-
-  .mat-card-image{
-    object-fit: cover; /*this makes the image in src fit to the size specified below*/
-    width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  
+  .mat-card-image {
+    object-fit: cover;
+    width: 100%;
     height: 50%;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+  .clickable.price {
+    color: darkblue;
+    font-weight: 500;
+  }
+
+  .inline-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .inline-content-left {
+    flex: 1;
+  }
+  
+  .inline-content-right {
+    margin-right: 8px; /* Adjust the spacing between the left and right content */
   }
   
