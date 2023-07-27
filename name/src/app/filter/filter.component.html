@@ -3,12 +3,14 @@
       <mat-card-header>
         <mat-card-title>Filter:</mat-card-title>
       </mat-card-header>
+      <br>
       <mat-card-content>
         <div class="filter-field">
           <mat-form-field>
             <input matInput type="text" placeholder="Item Name" [(ngModel)]="productTitle" (input)="applyFilter()" />
           </mat-form-field>
         </div>
+        <br>
         <div class="filter-field-price">
           <mat-form-field class="price-form">
             <input matInput type="number" placeholder="Min Price" [(ngModel)]="minPrice" (input)="applyFilter()" />
@@ -25,6 +27,7 @@
             <input value="10000" matSliderEndThumb [(ngModel)]="maxPrice" (input)="applyFilter()" />
           </mat-slider>
         </div>
+        <br>
         <div class="filter-field">
           <mat-form-field>
             <mat-label>Order By</mat-label>
