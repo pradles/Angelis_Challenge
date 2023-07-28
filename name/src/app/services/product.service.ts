@@ -15,7 +15,7 @@ export class ProductService {
     return this.http.get<any[]>(this.jsonDataPath);
   }
 
-  getProductById(id: number): Observable<any> {
+  getProductById(id: string): Observable<any> {
     return this.http.get<any[]>(this.jsonDataPath).pipe(
       map(data => data.find(item => item.id === id))
     );

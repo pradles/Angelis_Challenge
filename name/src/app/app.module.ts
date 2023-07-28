@@ -52,7 +52,7 @@ import { CartComponent } from './cart/cart.component';
     MatSelectModule,
     MatFormFieldModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

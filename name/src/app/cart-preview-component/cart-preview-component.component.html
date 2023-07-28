@@ -11,14 +11,14 @@
                 <div class="block">
                     <div class="bordr">
                     <div class="inline-block no-inline"><p class="btn btn1" (click)="subProduct(product.id);">-</p></div>
-                    <div class="inline-block ni-inline"><p class="btn btn2" (click)="addProduct(product.id);">+</p></div>
+                    <div class="inline-block no-inline"><p class="btn btn2" (click)="addProduct(product.id);">+</p></div>
                     </div>
                 </div>
             </div>
             <br><br>
             
             <div class="block price">
-                <p *ngIf="getProductCount(product.productId) > -1" class="inline-block price-number">
+                <p *ngIf="getProductCount(product.id) > 1" class="inline-block price-number">
                   {{ product.listOfPlans[0].price.amount }} x {{ getProductCount(product.id) }}         
                 </p>
                 <p class="inline-block price-price">

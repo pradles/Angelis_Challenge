@@ -22,14 +22,14 @@ export class CartPreviewComponentComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    this.cartItems = this.cartService.getCartItems();
-    console.log("cart-items:",this.cartItems);
+    //console.log("cart-items:",this.cartItems);
     this.getProductsForCartItems();
-    console.log("items:",this.products);
+    //console.log("items:",this.products);
   }
 
   getProductsForCartItems(): void {
     // Loop through each cart item and fetch the corresponding product
+    this.cartItems = this.cartService.getCartItems();
     for (const cartItem of this.cartItems) {
       const productId = cartItem.productId; // Get the product ID from the cart item
       this.productService.getProductById(productId).subscribe(
@@ -49,6 +49,7 @@ export class CartPreviewComponentComponent implements OnInit {
   }
 
   getProductCount(productId: string): number {
+    //console.log("#ofProduct: ",this.cartService.getItemQuantity(productId))
     return this.cartService.getItemQuantity(productId);  
   }
 
@@ -60,8 +61,14 @@ export class CartPreviewComponentComponent implements OnInit {
     this.cartService.updateCartItemQuantity(productId,-1);
   }
 
-  removeProduct(productId: string): void{
+  removeProduct(productId: string): void {
     this.cartService.removeFromCart(productId);
+    
+    // Remove the product from the products array as well
+    const index = this.products.findIndex(product => product.id === productId);
+    if (index !== -1) {
+      this.products.splice(index, 1);
+    }
   }
 
   onCloseDialog(): void {

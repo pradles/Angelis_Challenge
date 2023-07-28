@@ -1,6 +1,7 @@
 .product-detail-container {
     width: 80%;
     margin: 0 auto; 
+    min-height: 800px;
   }
 
   .product-img-info{
@@ -35,7 +36,7 @@
   }
 
   .price {
-    color: darkblue;
+    color: cadetblue;
   }
 
   .btn-cart {
