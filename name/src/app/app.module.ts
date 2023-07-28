@@ -17,6 +17,13 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms'; 
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form-field';
+import { HeaderComponent } from './header/header.component';
+import {MatIconModule} from '@angular/material/icon';
+import { CartPreviewComponentComponent } from './cart-preview-component/cart-preview-component.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CartComponent } from './cart/cart.component';
+
+
 
  
 
@@ -27,6 +34,9 @@ import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form
     HomeComponent,
     ProductDetailsComponent,
     FilterComponent,
+    HeaderComponent,
+    CartPreviewComponentComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +51,8 @@ import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form
     FormsModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

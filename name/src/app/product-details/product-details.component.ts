@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service'; // Import the ProductService
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -9,10 +10,12 @@ import { ProductService } from '../services/product.service'; // Import the Prod
 })
 export class ProductDetailsComponent implements OnInit {
   product: any;
+  isInCart: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService,
   ) {}
 
 
@@ -22,6 +25,7 @@ export class ProductDetailsComponent implements OnInit {
       console.log("parameter:",params);
       const productId = params['id'];
       console.log("id:",productId);
+      this.isInCart = this.cartService.isInCart(productId);
       // Fetch the product details based on productId
       this.productService.getProductById(productId).subscribe(
         (product) => {
@@ -33,5 +37,12 @@ export class ProductDetailsComponent implements OnInit {
         }
       );
     });
+
   }
+
+  addToCart(productId: string): void {
+    this.cartService.addToCart(productId,1);
+    console.log(this.cartService.getCartItems());
+  }
+
 }
