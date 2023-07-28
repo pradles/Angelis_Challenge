@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ProductService {
-  private jsonDataPath = '../../assets/products.json'; // Replace with your API URL
+  private jsonDataPath = '../../assets/products.json'; 
 
   constructor(private http: HttpClient) {}
 
